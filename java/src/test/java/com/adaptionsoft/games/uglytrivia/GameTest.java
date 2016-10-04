@@ -41,6 +41,13 @@ public class GameTest {
     public void Add_GivenBob_willGiveGameOnePlayer() {
         game.add("Bob");
         assertThat(game.players.size(), is(1));
+        assertThat(game.howManyPlayers(), is(1));
+        assertThat(game.purses[1], is(0));
+
+        // By indexing these using howManyPlayers we may catch changes in
+        // howManyPlayers which change internal logic
+        assertThat(game.places[game.howManyPlayers()], is(0));
+        assertThat(game.inPenaltyBox[game.howManyPlayers()], is(false));
     }
 
 }
