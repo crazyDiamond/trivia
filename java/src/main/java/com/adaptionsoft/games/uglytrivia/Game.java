@@ -29,10 +29,6 @@ public class Game {
 	public String createQuestion(String category, int index){
 		return category + index;
 	}
-	
-	public boolean isPlayable() {
-		return (howManyPlayers() >= 2);
-	}
 
 	public boolean add(String playerName) {
 		

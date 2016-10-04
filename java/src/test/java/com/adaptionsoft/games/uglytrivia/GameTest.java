@@ -27,4 +27,18 @@ public class GameTest {
         assertThat(game.rockQuestions.get(3).toString(), is("Rock Question 3"));
     }
 
+    @Test
+    public void GameByDefault_has_zero_players(){
+        Game game = new Game();
+        assertThat(game.players.size(), is(0));
+        assertThat(game.currentPlayer, is(0));
+    }
+
+    @Test
+    public void Add_GivenBob_willGiveGameOnePlayer() {
+        Game game = new Game();
+        game.add("Bob");
+        assertThat(game.players.size(), is(1));
+    }
+
 }
